@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PruebaDempeño.Models;
 
@@ -6,6 +7,7 @@ namespace PruebaDempeño.Controllers.V1.Users
 {
     public partial class UsersController : ControllerBase
     {
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetAll()
         {
@@ -19,6 +21,7 @@ namespace PruebaDempeño.Controllers.V1.Users
         }
 
 
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetById(int id)
         {
