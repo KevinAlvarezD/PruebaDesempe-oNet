@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PruebaDempeño.DTOs.Request;
@@ -12,6 +13,7 @@ namespace PruebaDempeño.Controllers.V1.Users
 {
     public partial class UsersController : ControllerBase
     {
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<ActionResult<User>> Create(UserDTO inputUser)
         {
