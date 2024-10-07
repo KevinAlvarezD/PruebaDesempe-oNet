@@ -6,6 +6,8 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using System.Text.Json.Serialization;
 using PruebaDempeño.Data;
+using PruebaDempeño.Repositories;
+using PruebaDempeñoAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 Env.Load();
@@ -29,12 +31,10 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
     });
 
-    //Instanciar los repositories y servicios que se usen aca
+builder.Services.AddScoped<IUserRepository, UserServices>();
+builder.Services.AddScoped<UserServices, UserServices>();    
 
-
-
-
-
+    
 var jwtIssuer = Environment.GetEnvironmentVariable("JWT_ISSUER");
 var jwtAudience = Environment.GetEnvironmentVariable("JWT_AUDIENCE");
 var jwtSecretKey = Environment.GetEnvironmentVariable("JWT_SECRET_KEY");
