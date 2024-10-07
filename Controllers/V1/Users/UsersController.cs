@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PruebaDempeño.Repositories;
 
-namespace TechStoreAPI.Controllers.V1.Users;
+namespace PruebaDempeño.Controllers.V1.Users;
 
     [ApiController]
     [Route("api/v1/users")]
