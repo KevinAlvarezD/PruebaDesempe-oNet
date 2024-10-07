@@ -2,9 +2,9 @@ using Microsoft.EntityFrameworkCore;
 using PruebaDempeño.Data;
 using PruebaDempeño.Helpers;
 using PruebaDempeño.Models;
-using TechStoreAPI.Repositories;
+using PruebaDempeño.Repositories;
 
-namespace TechStoreAPI.Services
+namespace PruebaDempeñoAPI.Services
 {
     public class UserServices : IUserRepository
     {

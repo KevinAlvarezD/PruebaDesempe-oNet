@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TechStoreAPI.DTOs.Request;
+namespace PruebaDempeño.DTOs.Request;
 
 public class UserDTO
 {
