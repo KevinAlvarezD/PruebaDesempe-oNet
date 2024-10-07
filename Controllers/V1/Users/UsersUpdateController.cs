@@ -2,11 +2,13 @@ using Microsoft.AspNetCore.Mvc;
 using PruebaDempeño.Helpers;
 
 using PruebaDempeño.DTOs.Request;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PruebaDempeño.Controllers.V1.Users
 {
     public partial class UsersController : ControllerBase
     {
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, UserDTO updatedUser)
         {
