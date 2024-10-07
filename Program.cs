@@ -6,13 +6,8 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using System.Text.Json.Serialization;
 using PruebaDempeño.Data;
-using PruebaDempeño.Repositories;
-using PruebaDempeño.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-
-
-
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
